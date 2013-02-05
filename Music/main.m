@@ -3,7 +3,7 @@
 //  Music
 //
 //  Created by runes on 12-8-24.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012年 __Runes.cn__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

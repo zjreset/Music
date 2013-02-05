@@ -14,14 +14,28 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
-
+@synthesize indexViewController,rootViewController;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+//    indexViewController = [[IndexViewController alloc] initWithNibName:@"IndexViewController" bundle:nil];
+//    [self.window setRootViewController:indexViewController];
+//    indexViewController.delegate=self;
+    rootViewController = [[RootViewController alloc] init];
+    [self.window setRootViewController:rootViewController];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)getMain{
+    rootViewController = [[RootViewController alloc] init];
+    [self.window setRootViewController:rootViewController];
+}
+
+-(void)dealloc{
+    [super dealloc];
+    [indexViewController release];
+    [rootViewController release];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
